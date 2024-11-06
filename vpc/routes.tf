@@ -4,7 +4,7 @@ resource "aws_route_table" "pub-rt" {
 
   resource "aws_route" "pub-route" {
     route_table_id = aws_route_table.pub-rt.id
-    destination_cidr_block = "0.0.0.0/0"
+    destination_cidr_block = var.rt_dest_cidr
     gateway_id = aws_internet_gateway.igw-01.id
   }
 
